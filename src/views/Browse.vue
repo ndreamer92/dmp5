@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>nav page about</h1>
+        <h1>Browse page</h1>
     </div>
 </template>
 

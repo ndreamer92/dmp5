@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Browse from './views/Browse.vue'
+import Info from './views/Info.vue'
+import Search from './views/Search.vue'
+import Top from './views/Top.vue'
+
 
 Vue.use(Router)
 
@@ -12,6 +17,26 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/browse',
+      name: 'browse',
+      component: Browse
+    },
+    {
+      path: '/info',
+      name: 'info',
+      component: Info
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: Search
+    },
+    {
+      path: '/Top',
+      name: 'Top',
+      component: Top
     },
     {
       path: '/about',
