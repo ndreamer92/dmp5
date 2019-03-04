@@ -45,7 +45,7 @@ export default {
       {
         name: 'Hearts of Iron IV',
         description: 'Simulation, Strategy',
-        full_desc: 'Victory is at your fingertips! Your ability to lead your nation is your supreme weapon, the strategy game Hearts of Iron IV lets you take command of any nation in World War II; the most engaging conflict in world history.',
+        full_desc: 'Victory is at your fingertips! Your ability to lead your nation is your supreme weapon, the strategy game Hearts of Iron IV lets you take command of any nation in World War II',
         imageLink: 'https://hb.imgix.net/610fd4bab647a5736b311f6addb43f7c689386c1.jpg?auto=compress,format&fit=crop&h=353&w=616&s=ec65b4deb756973fdab054d2be89705b',
         buyLink: 'http://plati.ru/itm/ved-mak-3-cd-key-witcher-3-gog-ru-cis-16-dlc/1944458',
         infoLink: 'http://plati.ru/games/ved-mak-3-dikaja-okhota-the-witcher-3-wild-hunt/467',

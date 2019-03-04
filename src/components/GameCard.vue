@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-card height="400px">
+        <v-card>
         <v-img
           :src="game.imageLink"
           aspect-ratio="2.35"
@@ -14,8 +14,8 @@
           </v-layout>
         </v-card-title>
         
-        <v-card-actions>
-          <v-btn flat color="orange" :href="game.buyLink" target="_blank">Buy</v-btn>
+        <v-card-actions >
+          <v-btn flat color="orange" :to="{name:'gameDeals',params:{gameId:game.id}}">Browse deals</v-btn>
           <v-btn flat color="orange" :href="game.infoLink" target="_blank">Info</v-btn>
           <v-spacer></v-spacer>
           <span title>Avg price: {{game.price_usd}} $</span>
@@ -39,6 +39,11 @@ export default {
 
 <style scoped>
 .cardBodySize {
-  height: 120px;
+    position: absolute;
+    padding-top: 3rem;
+}
+.descSize {
+  height: 110px;
+  
 }
 </style>
