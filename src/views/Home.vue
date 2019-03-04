@@ -1,6 +1,6 @@
 <template>
   <v-layout lign-start justify-start row fill-height>
-    <v-flex v-for="game in mockDeal" :key="game.name" xs12 sm3 ma-3>
+    <v-flex v-for="game in mockDeal" :key="game.name" xs6 sm3 ma-3>
       <game-card :game="game"></game-card>
     </v-flex>
   </v-layout>

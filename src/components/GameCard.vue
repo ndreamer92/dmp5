@@ -3,7 +3,7 @@
         <v-card height="400px">
         <v-img
           :src="game.imageLink"
-          aspect-ratio="2.75"
+          aspect-ratio="2.35"
         ></v-img>
 
         <v-card-title primary-title>
@@ -15,11 +15,12 @@
         </v-card-title>
         
         <v-card-actions>
-          <v-btn flat color="orange">Buy</v-btn>
-          <v-btn flat color="orange">Info</v-btn>
+          <v-btn flat color="orange" :href="game.buyLink" target="_blank">Buy</v-btn>
+          <v-btn flat color="orange" :href="game.infoLink" target="_blank">Info</v-btn>
           <v-spacer></v-spacer>
           <span title>Avg price: {{game.price_usd}} $</span>
         </v-card-actions>
+        
       </v-card>
     </div>
 </template>
