@@ -1,19 +1,19 @@
 <template>
-  <div>
+  <v-container>
     <v-layout align-center justify-start column fill-height ma-3>
       <p class="headline">{{game.name}}</p>
     </v-layout>
-    <v-container fluid>
-      <v-layout align-space-around justify-center column fill-height>
-        <v-layout v-for="gameDeal in getGameDealsById(game.id)" :key="gameDeal.id" pa-2>
+    
+      <v-layout align-start justify-start row fill-height>
+        <v-flex v-for="gameDeal in getGameDealsById(game.id)" :key="gameDeal.id" pa-2 lg3>
           <game-deal :deal="gameDeal"></game-deal>
-        </v-layout>
+        </v-flex>
       </v-layout>
-    </v-container>
+    
     <v-layout align-center justify-start column fill-height ma-3>
       <v-pagination v-model="page" :length="6"></v-pagination>
     </v-layout>
-  </div>
+  </v-container>
 </template>
 
 <script>

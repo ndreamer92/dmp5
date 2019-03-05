@@ -4,7 +4,7 @@ export default ({
         id: '11111',
         name: 'Witcher 3: the Wild Hunt',
         description: 'Action RPG',
-        full_desc: 'Open World. In the open world of Wild Hunt, you chart your own path to adventure. You play as a bounty hunter, a man of the road.',
+        full_desc: 'Open World. In the open world of Wild Hunt, you chart your own path to adventure. You play as a bounty hunter, a man of the road. Many awards. Need some words to expand this layout',
         imageLink: 'https://cdn.maximonline.ru/08/d3/ac/08d3ace29340d6ca95fad1f708f933ff/665x374_1_8821b17a1b9ab98357e628f0d6f0b53b@1476x830_0xac120005_13927478591529043572.jpg',
         buyLink: 'http://plati.ru/itm/ved-mak-3-cd-key-witcher-3-gog-ru-cis-16-dlc/1944458',
         infoLink: 'http://plati.ru/games/ved-mak-3-dikaja-okhota-the-witcher-3-wild-hunt/467',
@@ -55,12 +55,12 @@ export default ({
         },
         {
           dealId: '2',
-          dealDesc: 'Witcher 3 Wild Hunt GOG ',
+          dealDesc: 'Witcher 3 Wild Hunt GOG test deal',
           price_usd: '6.50',
           store: 'GOG',
           agent: 'Plati.ru',
           buyLink: '',
-          imageLink: 'https://cdn.maximonline.ru/08/d3/ac/08d3ace29340d6ca95fad1f708f933ff/665x374_1_8821b17a1b9ab98357e628f0d6f0b53b@1476x830_0xac120005_13927478591529043572.jpg'
+          imageLink: 'https://images.gog.com/60c724a052275a049d857d53957dc38e9347742f52372bb956d992b43efa8fb5_product_card_v2_mobile_slider_639.jpg'
         },
         {
           dealId: '3',
@@ -69,7 +69,7 @@ export default ({
           store: 'Steam',
           agent: 'Plati.ru',
           buyLink: '',
-          imageLink: 'https://cdn.maximonline.ru/08/d3/ac/08d3ace29340d6ca95fad1f708f933ff/665x374_1_8821b17a1b9ab98357e628f0d6f0b53b@1476x830_0xac120005_13927478591529043572.jpg'
+          imageLink: 'https://3dnews.ru/assets/external/illustrations/2014/10/17/903764/witcher%203%20088.jpg'
         },
         {
           dealId: '4',
@@ -78,7 +78,7 @@ export default ({
           store: 'Steam',
           agent: 'GabeStore',
           buyLink: '',
-          imageLink: 'https://cdn.maximonline.ru/08/d3/ac/08d3ace29340d6ca95fad1f708f933ff/665x374_1_8821b17a1b9ab98357e628f0d6f0b53b@1476x830_0xac120005_13927478591529043572.jpg'
+          imageLink: 'https://www.sideshow.com/storage/product-images/902889/eredin_the-witcher-3-wild-hunt_gallery_5c4d89bfb4ca9.jpg'
         },]
     },
     {
@@ -91,7 +91,7 @@ export default ({
           store: 'Steam',
           agent: 'Plati.ru',
           buyLink: '',
-          imageLink: ''
+          imageLink: 'https://images.g2a.com/newlayout/323x433/1x1x0/387a113709aa/59e5efeb5bafe304c4426c47'
         },
         {
           dealId: '6',
@@ -100,7 +100,7 @@ export default ({
           store: 'GOG',
           agent: 'Plati.ru',
           buyLink: '',
-          imageLink: ''
+          imageLink: 'https://steamcdn-a.akamaihd.net/steam/apps/271590/header.jpg?t=1544815097'
         },
         {
           dealId: '7',
@@ -109,7 +109,7 @@ export default ({
           store: 'Steam',
           agent: 'Plati.ru',
           buyLink: '',
-          imageLink: ''
+          imageLink: 'https://i.ytimg.com/vi/jl2xNWeujZs/maxresdefault.jpg'
         },
         {
           dealId: '8',
@@ -118,7 +118,7 @@ export default ({
           store: 'Steam',
           agent: 'GabeStore',
           buyLink: '',
-          imageLink: ''
+          imageLink: 'https://i.ytimg.com/vi/qquffawsUMw/maxresdefault.jpg'
         },]
     },
     {
@@ -131,7 +131,7 @@ export default ({
           store: 'Steam',
           agent: 'Plati.ru',
           buyLink: '',
-          imageLink: ''
+          imageLink: 'https://hb.imgix.net/74e8d7c2ec7dde490abf64d54f9828fa073ae4e3.jpg?auto=compress,format&fit=crop&h=353&w=616&s=6b9af392df9564413a51c35a14a3c6d1'
         },
         {
           dealId: '11',
@@ -140,7 +140,7 @@ export default ({
           store: 'GOG',
           agent: 'Plati.ru',
           buyLink: '',
-          imageLink: ''
+          imageLink: 'https://3dnews.ru/assets/external/illustrations/2018/09/07/975105/Odyssey_screen.jpg'
         },
         {
           dealId: '13',
@@ -149,7 +149,7 @@ export default ({
           store: 'Steam',
           agent: 'Plati.ru',
           buyLink: '',
-          imageLink: ''
+          imageLink: 'https://steamcdn-a.akamaihd.net/steam/apps/812140/header.jpg?t=1540836192'
         },
         {
           dealId: '12',
@@ -158,7 +158,7 @@ export default ({
           store: 'Steam',
           agent: 'GabeStore',
           buyLink: '',
-          imageLink: ''
+          imageLink: 'https://images-na.ssl-images-amazon.com/images/I/819ImPM9zPL._SL1500_.jpg'
         },]
     },
     {
@@ -171,7 +171,7 @@ export default ({
           store: 'Steam',
           agent: 'Plati.ru',
           buyLink: '',
-          imageLink: ''
+          imageLink: 'https://ic.pics.livejournal.com/mr_garett/24653978/558342/558342_800.jpg'
         },
         {
           dealId: '15',
@@ -180,7 +180,7 @@ export default ({
           store: 'GOG',
           agent: 'Plati.ru',
           buyLink: '',
-          imageLink: ''
+          imageLink: 'https://i.ytimg.com/vi/qPB6KF7JCKw/maxresdefault.jpg'
         },
         {
           dealId: '71',
@@ -189,7 +189,7 @@ export default ({
           store: 'Steam',
           agent: 'Plati.ru',
           buyLink: '',
-          imageLink: ''
+          imageLink: 'https://steamcdn-a.akamaihd.net/steam/apps/702350/header.jpg?t=1521557148'
         },
         {
           dealId: '81',
@@ -198,7 +198,7 @@ export default ({
           store: 'Steam',
           agent: 'GabeStore',
           buyLink: '',
-          imageLink: ''
+          imageLink: 'https://steamcdn-a.akamaihd.net/steam/apps/584140/header.jpg?t=1521557110'
         },]
     },
   ]

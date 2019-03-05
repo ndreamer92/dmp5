@@ -16,7 +16,7 @@
         
         <v-card-actions >
           <v-btn flat color="orange" :to="{name:'gameDeals',params:{game:game}}">Browse deals</v-btn>
-          <v-btn flat color="orange" :href="game.infoLink" target="_blank">Info</v-btn>
+          <v-btn flat color="orange" :href="game.infoLink" target="_blank"><v-icon>info</v-icon>Info</v-btn>
           <v-spacer></v-spacer>
           <span title>Avg price: {{game.price_usd}} $</span>
         </v-card-actions>
