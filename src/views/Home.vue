@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Welcome to HomePage</h1>
+    <h1>Welcome to HomePage </h1>
     
     <v-layout align-space-around justify-center column fill-height>
       
