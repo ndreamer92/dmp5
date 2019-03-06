@@ -1,11 +1,11 @@
 <template>
   <v-container>
     <v-layout align-center justify-start column fill-height ma-3>
-      <p class="headline">{{game.name}}</p>
+      <p class="headline">{{getGameDealsById(gameId).name}}</p>
     </v-layout>
     
       <v-layout align-start justify-start row fill-height>
-        <v-flex v-for="gameDeal in getGameDealsById(game.id)" :key="gameDeal.id" pa-2 lg3>
+        <v-flex v-for="gameDeal in getGameDealsById(gameId).deals" :key="gameDeal.id" pa-2 lg3>
           <game-deal :deal="gameDeal"></game-deal>
         </v-flex>
       </v-layout>
@@ -21,23 +21,25 @@ import GameDeal from "../components/GameDeal";
 
 export default {
   props: {
-    game: {
-      type: Object,
+    gameId: {
+      type: String,
       required: true
     }
   },
   data() {
     return {
-      page: 1
+      page: 1,
     };
   },
   computed: {},
   methods: {
     getGameDealsById(gameId) {
       var game = this.$store.getters.getGameDealsById(gameId);
-      return game.deals;
+      return game;
     },
-    created() {}
+    created() {
+      
+    }
   },
   components: {
     GameDeal

@@ -39,7 +39,7 @@ export default new Router({
       component: Top
     },
     {
-      path: '/gameDeals/',
+      path: '/gameDeals/:gameId',
       name: 'gameDeals',
       props: true,
       component: GameDeals
