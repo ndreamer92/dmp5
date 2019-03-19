@@ -30,8 +30,9 @@
       <v-autocomplete
         v-model="select"
         :loading="loading"
-        :items="items"
+        :items="games"
         :search-input.sync="search"
+        :filter="customFilter"
         cache-items
         class="mx-3"
         flat
@@ -77,7 +78,7 @@ export default {
       { icon: "delete", text: "Info", route: "/info", title: "test4" }
     ],
     loading: false,
-    items: [],
+    games: [],
     search: null,
     select: null
   }),
@@ -85,21 +86,32 @@ export default {
     source: String
   },
   computed: {
-    games() {
-      return this.$store.getters.getGames;
-    }
+    // games() {
+    //   return this.$store.getters.getGames;
+    // }
   },
   watch: {
     search(val) {
       // Items have already been loaded
-      if (this.items.length > 0) return;
+      if (this.games.length > 0) return;
 
       this.isLoading = true;
 
       // Lazily load input items
-      this.items = this.$store.getters.getGames;
+      this.games = this.$store.getters.getGames;
 
       this.isLoading = false;
+    }
+  },
+  methods: {
+    customFilter(item, queryText, itemText) {
+      const textOne = item.title.toLowerCase();
+      
+      const searchText = queryText.toLowerCase();
+
+      return (
+        textOne.indexOf(searchText) > -1 
+      );
     }
   }
 };
