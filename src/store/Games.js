@@ -15,7 +15,7 @@ export default ({
     actions: {
         LOAD_GAMES({ commit }) {
             axios
-                .get("http://127.0.0.1:8000/api/gameList")
+                .get("http://84.201.130.111:8000/api/gameList")
                 .then(response => (commit('SET_GAMES',response)));
         }
     },
