@@ -53,12 +53,9 @@
             <img :src="item.image_link">
           </v-list-tile-avatar>
           <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
+            <v-list-tile-title v-text="item.title" v-on:click="onSearchClick(item.id)"></v-list-tile-title>
             <v-list-tile-sub-title v-text="item.id"></v-list-tile-sub-title>
           </v-list-tile-content>
-          <v-list-tile-action>
-            <v-icon>mdi-coin</v-icon>
-          </v-list-tile-action>
         </template>
       </v-autocomplete>
       <v-spacer></v-spacer>
@@ -94,24 +91,25 @@ export default {
     search(val) {
       // Items have already been loaded
       if (this.games.length > 0) return;
-
-      this.isLoading = true;
+      if (val) this.isLoading = true;
 
       // Lazily load input items
+
       this.games = this.$store.getters.getGames;
 
       this.isLoading = false;
     }
   },
   methods: {
-    customFilter(item, queryText, itemText) {
+    customFilter(item, queryText /*, itemText*/) {
       const textOne = item.title.toLowerCase();
-      
+
       const searchText = queryText.toLowerCase();
 
-      return (
-        textOne.indexOf(searchText) > -1 
-      );
+      return textOne.indexOf(searchText) > -1;
+    },
+    onSearchClick(gameId) {
+      this.$router.push({ name: "gameDetailedView", params: { gameId: gameId } });
     }
   }
 };

@@ -53,4 +53,3 @@ export default {
 
 <style scoped>
 </style>
-// <p v-for="game in games" :key="game.id">{{game.title}}</p>

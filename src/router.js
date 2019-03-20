@@ -6,6 +6,7 @@ import Info from './views/Info.vue'
 import Search from './views/Search.vue'
 import Top from './views/Top.vue'
 import GameDeals from './views/GameDeals.vue'
+import GameDetailedView from './views/GameDetailedView.vue'
 
 Vue.use(Router)
 
@@ -44,6 +45,12 @@ export default new Router({
       props: true,
       component: GameDeals
     }, 
+    {
+      path: '/gameDetailedView/:gameId',
+      name: 'gameDetailedView',
+      props: true,
+      component: GameDetailedView
+    },
     {
       path: '/about',
       name: 'about',

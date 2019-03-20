@@ -9,7 +9,6 @@ export default ({
     mutations: {
         SET_GAMES(state, payload) {
             state.games =  payload.data.games
-            
         }
     },
     actions: {
@@ -20,7 +19,8 @@ export default ({
         }
     },
     getters: {
-        getGames: (state) => state.games
+        getGames: (state) => state.games,
+
     }
 
 })
