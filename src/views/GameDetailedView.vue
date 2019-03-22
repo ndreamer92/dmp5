@@ -1,6 +1,7 @@
 <template>
   <v-container>
     <game-details :gameId="gameId" :key="gameId"></game-details>
+    <!-- <game-deals></game-deals> -->
   </v-container>
 </template>
 

@@ -46,8 +46,8 @@ export default new Router({
       component: GameDeals
     }, 
     {
-      path: '/gameDetailedView/:gameId',
-      name: 'gameDetailedView',
+      path: '/game/:gameId',
+      name: 'game',
       props: true,
       component: GameDetailedView
     },

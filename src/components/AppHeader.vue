@@ -49,12 +49,12 @@
         </template>
 
         <template v-slot:item="{ item }">
-          <v-list-tile-avatar>
+          <v-list-tile-avatar v-on:click="onSearchClick(item.id)">
             <img :src="item.image_link">
           </v-list-tile-avatar>
           <v-list-tile-content>
             <v-list-tile-title v-text="item.title" v-on:click="onSearchClick(item.id)"></v-list-tile-title>
-            <v-list-tile-sub-title v-text="item.id"></v-list-tile-sub-title>
+            <v-list-tile-sub-title v-text="item.id" v-on:click="onSearchClick(item.id)"></v-list-tile-sub-title>
           </v-list-tile-content>
         </template>
       </v-autocomplete>
@@ -79,14 +79,8 @@ export default {
     search: null,
     select: null
   }),
-  props: {
-    source: String
-  },
-  computed: {
-    // games() {
-    //   return this.$store.getters.getGames;
-    // }
-  },
+  props: {},
+  computed: {},
   watch: {
     search(val) {
       // Items have already been loaded
@@ -109,7 +103,7 @@ export default {
       return textOne.indexOf(searchText) > -1;
     },
     onSearchClick(gameId) {
-      this.$router.push({ name: "gameDetailedView", params: { gameId: gameId } });
+      this.$router.push({ name: "game", params: { gameId: gameId } });
     }
   }
 };
