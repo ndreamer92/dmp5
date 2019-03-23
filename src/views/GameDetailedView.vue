@@ -1,12 +1,13 @@
 <template>
   <v-container>
     <game-details :gameId="gameId" :key="gameId"></game-details>
-    <!-- <game-deals></game-deals> -->
+    <game-deals :gameId="gameId"></game-deals>
   </v-container>
 </template>
 
 <script>
 import GameDetails from "../components/GameDetails";
+import GameDeals from "../components/GameDeals";
 
 export default {
   props: {
@@ -16,7 +17,8 @@ export default {
     }
   },
   components: {
-    GameDetails
+    GameDetails,
+    GameDeals
   }
 };
 </script>

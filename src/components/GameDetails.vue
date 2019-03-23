@@ -29,11 +29,11 @@
           </v-layout>
         </v-flex>
       </v-layout>
-      <!-- Screen gallery placeholder -->
       <v-layout xs12>
         <h5>{{game.description}} Описание: пока что пустое, нужно сделать нормальную БД</h5>
       </v-layout>
       <v-divider></v-divider>
+      <!-- Screen gallery -->
       <h5>Screenshots:</h5>
       <v-layout align-start justify-space-between row>
         <v-flex xs12>
@@ -75,9 +75,10 @@ export default {
     screenshots() {
       var tempArr = [];
       for (var i = 0; i < this.image_show_limit; i++) {
-        tempArr.push(this.images[i])
+        if (this.images[i])
+        tempArr.push(this.images[i]);
       }
-      return tempArr
+      return tempArr;
     }
   },
   mounted() {},
