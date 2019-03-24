@@ -8,7 +8,7 @@ export default ({
     },
     mutations: {
         SET_GAMES(state, payload) {
-            state.games =  payload.data.games
+            state.games =  payload.data.results
         }
     },
     actions: {
