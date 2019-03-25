@@ -55,6 +55,7 @@
 <script>
 import axios from "axios";
 import VueGallery from "vue-gallery";
+import Vue from 'vue'
 
 export default {
   props: {
@@ -85,7 +86,7 @@ export default {
   created() {
     axios
       .get(
-        "http://84.201.130.111:8000/api/games/" + this.gameId + "/?format=json"
+        Vue.$apiEndpoint + "/api/games/" + this.gameId + "/?format=json"
       )
       .then(response => {
         this.game = response.data;

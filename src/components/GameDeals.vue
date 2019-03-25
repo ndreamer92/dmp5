@@ -9,6 +9,7 @@
 
 <script>
 import axios from "axios";
+import Vue from 'vue'
 
 export default {
   props: {
@@ -25,7 +26,7 @@ export default {
   created() {
     axios
       .get(
-        "http://84.201.130.111:8000/api/deals/" + this.gameId + "/?format=json"
+        Vue.$apiEndpoint + "/api/getDealsByGameId/" + this.gameId + "/?format=json"
       )
       .then(response => {
         console.log(response.data);
