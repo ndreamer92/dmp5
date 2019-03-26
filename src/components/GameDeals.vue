@@ -1,44 +1,64 @@
 <template>
   <v-container fluid>
-    <h1>Deals for {{gameId}} will be displayed here:</h1>
-    <v-layout align-space-around justify-start column fill-height>
-      <v-flex xs12>
-        <v-card color="orange lighten-3" class="black--text">
-          <v-layout pa-2>
-            <v-flex xs2>
-              <v-img src="https://cdn.vuetifyjs.com/images/cards/foster.jpg" height="125px" contain></v-img>
-            </v-flex>
-            <v-flex xs6>
-              <v-card-title primary-title>
-                <div>
-                  <div class="headline">Game title</div>
-                  <div>deal desc</div>
-                  <div>(2014)</div>
-                </div>
-              </v-card-title>
-            </v-flex>
-            <v-flex xs2>
-              <v-card-title primary-title>
-                <div>
-                  <div class="headline">Price</div>
-                  <div>orig</div>
-                  <div>lower</div>
-                </div>
-              </v-card-title>
-            </v-flex>
-            <v-flex xs2>
-              <v-card-title primary-title>
-                <div>
-                  <div class="headline">Agent</div>
-                  <div>Activation</div>
-                  <div>Buy</div>
-                </div>
-              </v-card-title>
-            </v-flex>
-          </v-layout>
-        </v-card>
-      </v-flex>
-    </v-layout>
+    <h1>Предложения: </h1>
+    <div v-if="Deals">
+      <v-layout align-space-around justify-start column fill-height pa-2>
+        <v-flex v-for="deal in Deals" :key="deal.id" xs12>
+          <v-card color="orange lighten-3" class="black--text">
+            <v-layout pa-2>
+              <v-flex xs2>
+                <v-img
+                  src="https://www.freeiconspng.com/uploads/no-image-icon-15.png"
+                  height="125px"
+                  contain
+                ></v-img>
+              </v-flex>
+              <v-flex xs4>
+                <v-card-title primary-title>
+                  <div>
+                    <div class="headline">Предложение:</div>
+                    <div>{{deal.description}}</div>
+                    <div>{{deal.id}}</div>
+                  </div>
+                </v-card-title>
+              </v-flex>
+              <v-flex xs2>
+                <v-card-title primary-title>
+                  <div>
+                    <div class="headline">Цена:</div>
+                    <div>{{deal.price_rur}}</div>
+                    <div>Rub</div>
+                  </div>
+                </v-card-title>
+              </v-flex>
+              <v-flex xs2>
+                <v-card-title primary-title>
+                  <div>
+                    <div class="headline">{{deal.agent}}</div>
+                    <div>Активация:</div>
+                    <div>{{deal.activation}}</div>
+                  </div>
+                </v-card-title>
+              </v-flex>
+              <v-flex xs2>
+                <v-card-title primary-title>
+                  <div>
+                    <v-btn flat color="red" :href="deal.deal_link" target="_blank">
+                      <v-icon>add_shopping_cart</v-icon>Купить
+                    </v-btn>
+                  </div>
+                  <div>
+                    <v-btn flat color="red">
+                      <v-icon>bookmark</v-icon>Сохранить
+                    </v-btn>
+                  </div>
+                </v-card-title>
+              </v-flex>
+            </v-layout>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </div>
   </v-container>
 </template>
 
@@ -67,7 +87,8 @@ export default {
           "/?format=json"
       )
       .then(response => {
-        console.log(response.data);
+        //console.log(response.data);
+        this.Deals = response.data;
       });
   }
 };
