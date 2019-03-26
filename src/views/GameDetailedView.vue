@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <game-details :gameId="gameId" :key="gameId"></game-details>
-    <game-deals :gameId="gameId"></game-deals>
+    <game-deals :gameId="gameId" :key="gameId+1"></game-deals>
   </v-container>
 </template>
 
