@@ -4,7 +4,7 @@
     <div v-if="Deals">
       <v-layout align-space-around justify-start column fill-height pa-2>
         <v-flex v-for="deal in Deals" :key="deal.id" xs12>
-          <v-card color="orange lighten-3" class="black--text">
+          <v-card :color=avilibilityStatusColor(deal.is_available) class="black--text">
             <v-layout pa-2>
               <v-flex xs2>
                 <v-img
@@ -26,8 +26,9 @@
                 <v-card-title primary-title>
                   <div>
                     <div class="headline">Цена:</div>
-                    <div>{{deal.price_rur}}</div>
-                    <div>Rub</div>
+                    <div v-if="deal.is_available">{{deal.price_rur}}</div>
+                    <div v-if="!deal.is_available">Недоступно</div>
+                    <div v-if="deal.is_available">Rub</div>
                   </div>
                 </v-card-title>
               </v-flex>
@@ -56,6 +57,7 @@
               </v-flex>
             </v-layout>
           </v-card>
+          <v-divider></v-divider>
         </v-flex>
       </v-layout>
     </div>
@@ -77,6 +79,17 @@ export default {
     return {
       Deals: null
     };
+  },
+  computed: {
+
+  },
+  methods : {
+    avilibilityStatusColor(isAviliable){
+      if (isAviliable)
+        return 'orange lighten-5'
+      else
+        return 'grey lighten-3'
+    }
   },
   created() {
     axios
