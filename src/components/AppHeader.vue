@@ -50,7 +50,7 @@
 
         <template v-slot:item="{ item }">
           <v-list-tile-avatar v-on:click="onSearchClick(item.id)">
-            <img :src="item.image_link">
+            <img :src="item.header_image">
           </v-list-tile-avatar>
           <v-list-tile-content>
             <v-list-tile-title v-text="item.title" v-on:click="onSearchClick(item.id)"></v-list-tile-title>

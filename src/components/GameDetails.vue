@@ -13,15 +13,15 @@
             height="200px"
             aspect-ratio="1.7"
             contain
-            :src="game.image_link"
+            :src="game.header_image"
           ></v-img>
         </v-flex>
         <v-flex xs8>
           <v-layout align-start justify-center column fill-height pa-3>
             <h4>Жанры:</h4>
-            <h3>{{game.genre}}</h3>
-            <h4>Особенности:</h4>
-            <h3>{{game.features}}</h3>
+            <h3>{{game.genres}}</h3>
+            <h4>Языки:</h4>
+            <h3>{{game.supported_languages}}</h3>
             <h4>Разработчик:</h4>
             <h3>{{game.developer}}</h3>
             <h4>Дата выхода:</h4>
@@ -30,7 +30,7 @@
         </v-flex>
       </v-layout>
       <v-layout xs12>
-        <h5>{{game.description}} Описание: пока что пустое, нужно сделать нормальную БД</h5>
+        <h4>{{game.about_the_game}}</h4>
       </v-layout>
       <v-divider></v-divider>
       <!-- Screen gallery -->
@@ -90,10 +90,9 @@ export default {
       )
       .then(response => {
         this.game = response.data;
-        var str = response.data.screenshots.replace(/'/g, '"');
-        var temparr = JSON.parse(str);
+        var temparr = response.data.screenshots_full.split(',')
         temparr.forEach(element => {
-          this.images.push(element.url);
+          this.images.push(element);
         });
       });
   },
