@@ -29,8 +29,8 @@
           </v-layout>
         </v-flex>
       </v-layout>
-      <v-layout xs12>
-        <h4>{{game.about_the_game}}</h4>
+      <v-layout xs12 pa-3>
+        <h4>{{game.short_description}}</h4>
       </v-layout>
       <v-divider></v-divider>
       <!-- Screen gallery -->
