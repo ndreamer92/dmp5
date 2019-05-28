@@ -1,23 +1,23 @@
 <template>
   <v-layout>
     <v-flex>
-      <v-card>
+      <v-card height="300px">
         <v-img
           class="white--text"
-          height="200px"
-          src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+          height="150px"
+          aspect-ratio="1.7"
+          contain
+          :src="game.header_image"
         >
           <v-container fill-height fluid>
             <v-layout fill-height>
-              <v-flex xs12 align-end flexbox>
-                <span class="headline">Game</span>
-              </v-flex>
+
             </v-layout>
           </v-container>
         </v-img>
         <v-card-title>
           <div>
-            <span>Whitehaven Beach</span>
+            <span>{{game.title}}</span>
           </div>
         </v-card-title>
         <v-card-actions>

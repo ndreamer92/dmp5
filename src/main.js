@@ -23,5 +23,7 @@ new Vue({
   render: function (h) { return h(App) }, 
   created() {
     store.dispatch('LOAD_GAMES')
+    store.dispatch('LOAD_TOP_GAMES')
+    store.dispatch('LOAD_RECENT_ADDED')
   }
 }).$mount('#app')
