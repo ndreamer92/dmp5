@@ -5,11 +5,13 @@
         <h1>Добро пожаловать</h1>
       </v-flex>
     </v-layout>
-    <v-layout align-center justify-center column fill-height>
-      <v-flex>
+    <v-layout align-space-between justify-center column fill-height>
+      <v-flex xs6 offset-xs-3 pa-3>
         <news-block></news-block>
+        <dmp-search-bar></dmp-search-bar>
       </v-flex>
     </v-layout>
+    <v-spacer></v-spacer>
     <v-layout align-center justify-space-around row fill-height>
       <v-tabs centered color="amber " dark icons-and-text>
         <v-tabs-slider color="black"></v-tabs-slider>
@@ -80,6 +82,7 @@
 <script>
 import NewsBlock from "../components/NewsBlock";
 import GameTopList from "../components/GameTopList";
+import dmpSearchBar from "../components/dmpSearchBar"
 
 export default {
   data() {
@@ -112,7 +115,8 @@ export default {
 
   components: {
     NewsBlock,
-    GameTopList
+    GameTopList,
+    dmpSearchBar
   }
 };
 </script>

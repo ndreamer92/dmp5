@@ -1,6 +1,6 @@
 <template>
-    <v-flex >
-      <v-card>
+    <v-flex v-if="games">
+      <v-card >
         <v-list subheader>
           <v-subheader>{{headerText}}</v-subheader>
           <v-list-tile
