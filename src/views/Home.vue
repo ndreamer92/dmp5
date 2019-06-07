@@ -13,7 +13,7 @@
     </v-layout>
     <v-spacer></v-spacer>
     <v-layout align-center justify-space-around row fill-height>
-      <v-tabs centered color="amber " dark icons-and-text>
+      <v-tabs centered color="amber " icons-and-text>
         <v-tabs-slider color="black"></v-tabs-slider>
 
         <v-tab href="#tab-1">

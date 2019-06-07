@@ -22,14 +22,10 @@
     </v-navigation-drawer>
     <v-toolbar color="amber" app absolute clipped-left>
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
-      <!-- <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon> -->
-      <span class="title ml-3 mr-5">
-        dmp&nbsp;
-        <span class="font-weight-light">alpha</span>
-      </span>
-      <!-- <v-text-field solo-inverted flat hide-details label="Search" prepend-inner-icon="search"></v-text-field> -->
-      
-      <!-- <v-spacer></v-spacer> -->
+
+      <router-link to="/" tag="span" style="cursor:pointer">
+        <v-toolbar-title v-text="'DMP alpha'"></v-toolbar-title>
+      </router-link>
 
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn v-for="(item,i) in nav_items" flat :key="`nav_items${i}`" :to="item.route">
@@ -37,6 +33,10 @@
           {{item.text}}
         </v-btn>
       </v-toolbar-items>
+      <v-spacer></v-spacer>
+      <v-btn flat>
+        <v-icon left>exit_to_app</v-icon>Login
+      </v-btn>
     </v-toolbar>
   </div>
 </template>
@@ -44,9 +44,9 @@
 <script>
 export default {
   data: () => ({
-    drawer: null,
+    drawer: false,
     nav_items: [
-      { icon: "home", text: "Homepage", route: "/", title: "test1" },
+      // { icon: "home", text: "Homepage", route: "/", title: "test1" },
       { icon: "whatshot", text: "Top Deals", route: "/Top", title: "test2" },
       { icon: "list", text: "Browse", route: "/Browse", title: "test3" },
       { icon: "search", text: "Search", route: "/Search", title: "test1" },
