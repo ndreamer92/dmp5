@@ -31,7 +31,7 @@
 export default {
   props: {
     games: {
-      type: Object,
+      type: Array,
       required: true
     },
     headerText: {

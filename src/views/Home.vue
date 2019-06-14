@@ -13,66 +13,71 @@
     </v-layout>
     <v-spacer></v-spacer>
     <v-layout align-center justify-space-around row fill-height>
-      <v-tabs centered color="amber " icons-and-text>
-        <v-tabs-slider color="black"></v-tabs-slider>
+      <div v-if="topGames">
+        <v-tabs centered color="amber" icons-and-text>
+          <v-tabs-slider color="black"></v-tabs-slider>
 
-        <v-tab href="#tab-1">
-          PC
-          <!-- <v-icon>phone</v-icon> -->
-        </v-tab>
+          <v-tab href="#tab-1">
+            PC
+            <!-- <v-icon>phone</v-icon> -->
+          </v-tab>
 
-        <v-tab href="#tab-2">
-          PS4
-          <!-- <v-icon>favorite</v-icon> -->
-        </v-tab>
+          <v-tab href="#tab-2">
+            PS4
+            <!-- <v-icon>favorite</v-icon> -->
+          </v-tab>
 
-        <v-tab href="#tab-3">
-          Other
-          <!-- <v-icon>account_box</v-icon> -->
-        </v-tab>
+          <v-tab href="#tab-3">
+            Other
+            <!-- <v-icon>account_box</v-icon> -->
+          </v-tab>
 
-        <v-tab-item :value="'tab-1'">
-          <v-layout align-center justify-space-around row fill-height>
-            <span>
-              <game-top-list :games="topGames" :headerText="'Popular Games'"></game-top-list>
-            </span>
-            <span>
-              <game-top-list :games="recentAdded" :headerText="'Recently Added'"></game-top-list>
-            </span>
-            <span>
-              <game-top-list :games="topGames" :headerText="'Yet another top'"></game-top-list>
-            </span>
-          </v-layout>
-        </v-tab-item>
+          <v-tab-item :value="'tab-1'">
+            <v-layout align-center justify-space-around row fill-height>
+              <span v-if="topGames">
+                <game-top-list :games="topGames" :headerText="'Popular Games'"></game-top-list>
+              </span>
+              <span v-if="recentAdded">
+                <game-top-list :games="recentAdded" :headerText="'Recently Added'"></game-top-list>
+              </span>
+              <span v-if="recentAdded">
+                <game-top-list :games="topGames" :headerText="'Yet another top'"></game-top-list>
+              </span>
+            </v-layout>
+          </v-tab-item>
 
-        <v-tab-item :value="'tab-2'">
-          <v-layout align-center justify-space-around row fill-height>
-            <span>
-              <game-top-list :games="topGames" :headerText="'Popular Games'"></game-top-list>
-            </span>
-            <span>
-              <game-top-list :games="recentAdded" :headerText="'Recently Added'"></game-top-list>
-            </span>
-            <span>
-              <game-top-list :games="topGames" :headerText="'Yet another top'"></game-top-list>
-            </span>
-          </v-layout>
-        </v-tab-item>
+          <v-tab-item :value="'tab-2'">
+            <v-layout align-center justify-space-around row fill-height>
+              <span v-if="topGames">
+                <game-top-list :games="topGames" :headerText="'Popular Games'"></game-top-list>
+              </span>
+              <span v-if="topGames">
+                <game-top-list :games="recentAdded" :headerText="'Recently Added'"></game-top-list>
+              </span>
+              <span v-if="topGames">
+                <game-top-list :games="topGames" :headerText="'Yet another top'"></game-top-list>
+              </span>
+            </v-layout>
+          </v-tab-item>
 
-        <v-tab-item :value="'tab-3'">
-          <v-layout align-center justify-space-around row fill-height>
-            <span>
-              <game-top-list :games="topGames" :headerText="'Popular Games'"></game-top-list>
-            </span>
-            <span>
-              <game-top-list :games="recentAdded" :headerText="'Recently Added'"></game-top-list>
-            </span>
-            <span>
-              <game-top-list :games="topGames" :headerText="'Yet another top'"></game-top-list>
-            </span>
-          </v-layout>
-        </v-tab-item>
-      </v-tabs>
+          <v-tab-item :value="'tab-3'">
+            <v-layout align-center justify-space-around row fill-height>
+              <span v-if="topGames">
+                <game-top-list :games="topGames" :headerText="'Popular Games'"></game-top-list>
+              </span>
+              <span v-if="topGames">
+                <game-top-list :games="recentAdded" :headerText="'Recently Added'"></game-top-list>
+              </span>
+              <span v-if="topGames">
+                <game-top-list :games="topGames" :headerText="'Yet another top'"></game-top-list>
+              </span>
+            </v-layout>
+          </v-tab-item>
+        </v-tabs>
+      </div>
+      <div v-if="!topGames">
+        <v-progress-circular :size="70" :width="7" color="orange" indeterminate></v-progress-circular>
+      </div>
     </v-layout>
   </v-container>
 </template>
@@ -82,12 +87,13 @@
 <script>
 import NewsBlock from "../components/NewsBlock";
 import GameTopList from "../components/GameTopList";
-import dmpSearchBar from "../components/dmpSearchBar"
+import dmpSearchBar from "../components/dmpSearchBar";
 
 export default {
   data() {
     return {
-         };
+      loaded: false
+    };
   },
   created() {
     //this.topGames = this.$store.getters.getTopGames;

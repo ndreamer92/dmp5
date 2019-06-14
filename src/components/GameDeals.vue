@@ -1,10 +1,13 @@
 <template>
   <v-container fluid>
-    <h1>Предложения: </h1>
-    <div v-if="Deals">
+    <h1>Предложения:</h1>
+
+    <v-progress-circular v-if="loading" :size="70" :width="7" color="orange" indeterminate></v-progress-circular>
+
+    <div v-if="!loading">
       <v-layout align-space-around justify-start column fill-height pa-2>
         <v-flex v-for="deal in Deals" :key="deal.id" xs12>
-          <v-card :color=avilibilityStatusColor(deal.is_available) class="black--text">
+          <v-card :color="avilibilityStatusColor(deal.is_available)" class="black--text">
             <v-layout pa-2>
               <v-flex xs2>
                 <v-img
@@ -77,21 +80,20 @@ export default {
   },
   data() {
     return {
-      Deals: null
+      Deals: null,
+      loading: true,
+      errored: false
     };
   },
-  computed: {
-
-  },
-  methods : {
-    avilibilityStatusColor(isAviliable){
-      if (isAviliable)
-        return 'orange lighten-5'
-      else
-        return 'grey lighten-3'
+  computed: {},
+  methods: {
+    avilibilityStatusColor(isAviliable) {
+      if (isAviliable) return "orange lighten-5";
+      else return "grey lighten-3";
     }
   },
-  created() {
+  created() {},
+  mounted() {
     axios
       .get(
         Vue.$apiEndpoint +
@@ -102,7 +104,13 @@ export default {
       .then(response => {
         //console.log(response.data);
         this.Deals = response.data;
-      });
+        //console.log(error);
+      })
+      // eslint-disable-next-line
+      .catch(error => {
+        this.errored = true;
+      })
+      .finally(() => (this.loading = false));
   }
 };
 </script>
