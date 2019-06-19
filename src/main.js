@@ -14,7 +14,7 @@ Vue.config.productionTip = false
 Vue.use(Vuetify)
 
 //Global variable for constant api endpoint
-const apiEndpoint = 'http://84.201.130.111:8000'
+const apiEndpoint = 'https://api.ggfl.ru'
 Vue.$apiEndpoint = apiEndpoint
 
 new Vue({
