@@ -6,8 +6,8 @@
         <!-- <h1 v-if="game.is_dlc">DLC</h1> -->
       </v-layout>
       <!-- Primary image for game, basic info -->
-      <v-layout align-start justify-start row fill-height xs12>
-        <v-flex xs4>
+      <v-layout align-start justify-start row fill-height>
+        <v-flex xs3>
           <v-img
             class="white--text"
             height="200px"
@@ -16,17 +16,25 @@
             :src="game.header_image"
           ></v-img>
         </v-flex>
-        <v-flex xs8>
+        <v-flex xs3>
           <v-layout align-start justify-center column fill-height pa-3>
             <h4>Жанры:</h4>
             <h3>{{game.genres}}</h3>
             <h4>Языки:</h4>
             <h3>{{game.supported_languages}}</h3>
             <h4>Разработчик:</h4>
-            <h3>{{game.developer}}</h3>
+            <h3>{{game.developers}}</h3>
             <h4>Дата выхода:</h4>
             <h3>{{game.release_date}}</h3>
           </v-layout>
+        </v-flex>
+        <v-flex xs3>
+          <v-layout align-start justify-center column fill-height pa-3>
+            <steam-price :game="game"></steam-price>
+          </v-layout>
+        </v-flex>
+        <v-flex xs3>
+          <metacriticsScore :game="game"></metacriticsScore>
         </v-flex>
       </v-layout>
       <v-layout xs12 pa-3>
@@ -55,7 +63,9 @@
 <script>
 import axios from "axios";
 import VueGallery from "vue-gallery";
-import Vue from 'vue'
+import SteamPrice from "../components/SteamPrice";
+import MetacriticsScore from "../components/MetacriticsScore";
+import Vue from "vue";
 
 export default {
   props: {
@@ -76,8 +86,7 @@ export default {
     screenshots() {
       var tempArr = [];
       for (var i = 0; i < this.image_show_limit; i++) {
-        if (this.images[i])
-        tempArr.push(this.images[i]);
+        if (this.images[i]) tempArr.push(this.images[i]);
       }
       return tempArr;
     }
@@ -85,19 +94,19 @@ export default {
   mounted() {},
   created() {
     axios
-      .get(
-        Vue.$apiEndpoint + "/api/games/" + this.gameId + "/?format=json"
-      )
+      .get(Vue.$apiEndpoint + "/api/games/" + this.gameId + "/?format=json")
       .then(response => {
         this.game = response.data;
-        var temparr = response.data.screenshots_full.split(',')
+        var temparr = response.data.screenshots_full.split(",");
         temparr.forEach(element => {
           this.images.push(element);
         });
       });
   },
   components: {
-    gallery: VueGallery
+    gallery: VueGallery,
+    steamPrice: SteamPrice,
+    metacriticsScore: MetacriticsScore
   }
 };
 </script>
