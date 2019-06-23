@@ -16,7 +16,7 @@
             :src="game.header_image"
           ></v-img>
         </v-flex>
-        <v-flex xs3>
+        <v-flex xs2>
           <v-layout align-start justify-center column fill-height pa-3>
             <h4>Жанры:</h4>
             <h3>{{game.genres}}</h3>
@@ -28,12 +28,12 @@
             <h3>{{game.release_date}}</h3>
           </v-layout>
         </v-flex>
-        <v-flex xs3>
+        <v-flex xs2>
           <v-layout align-start justify-center column fill-height pa-3>
             <steam-price :game="game"></steam-price>
           </v-layout>
         </v-flex>
-        <v-flex xs3>
+        <v-flex xs2>
           <metacriticsScore :game="game"></metacriticsScore>
         </v-flex>
       </v-layout>
