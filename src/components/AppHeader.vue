@@ -27,13 +27,15 @@
         <v-toolbar-title v-text="'DMP alpha'"></v-toolbar-title>
       </router-link>
 
+
+      <dmp-search-bar></dmp-search-bar>
+      <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn v-for="(item,i) in nav_items" flat :key="`nav_items${i}`" :to="item.route">
           <v-icon left v-html="item.icon"></v-icon>
           {{item.text}}
         </v-btn>
       </v-toolbar-items>
-      <v-spacer></v-spacer>
       <v-btn flat>
         <v-icon left>exit_to_app</v-icon>Login
       </v-btn>
@@ -42,6 +44,7 @@
 </template>
 
 <script>
+import dmpSearchBar from "../components/dmpSearchBar";
 export default {
   data: () => ({
     drawer: false,
@@ -59,7 +62,10 @@ export default {
   props: {},
   computed: {},
   watch: {},
-  methods: {}
+  methods: {},
+  components: {
+    dmpSearchBar
+  }
 };
 </script>
 
