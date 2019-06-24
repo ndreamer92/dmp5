@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-navigation-drawer v-model="drawer" fixed clipped class="grey lighten-4" app>
+  <div >
+    <v-navigation-drawer v-model="drawer" fixed clipped class="grey lighten-4" app >
       <v-list dense class="grey lighten-4">
         <template v-for="(item, i) in nav_items">
           <v-layout v-if="item.heading" :key="i" row align-center>
@@ -19,9 +19,9 @@
           </v-list-tile>
         </template>
       </v-list>
-    </v-navigation-drawer>
-    <v-toolbar color="amber" app absolute clipped-left>
-      <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
+    </v-navigation-drawer >
+    <v-toolbar color="amber" app absolute clipped-left >
+      <v-toolbar-side-icon @click="drawer = !drawer" ></v-toolbar-side-icon>
 
       <router-link to="/" tag="span" style="cursor:pointer">
         <v-toolbar-title v-text="'DMP alpha'"></v-toolbar-title>
