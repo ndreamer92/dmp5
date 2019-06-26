@@ -1,48 +1,50 @@
 <template>
   <v-container fluid>
     <div v-if="game">
-      <v-layout>
+      <v-layout pa-2>
         <h1>{{game.title}}</h1>
         <!-- <h1 v-if="game.is_dlc">DLC</h1> -->
       </v-layout>
       <!-- Primary image for game, basic info -->
       <v-layout align-start justify-start row fill-height>
-        <v-flex xs3>
+        <v-flex xs4 pa-2>
           <v-img
             class="white--text"
             height="200px"
-            aspect-ratio="1.7"
+            aspect-ratio="2"
             contain
             :src="game.header_image"
           ></v-img>
         </v-flex>
-        <v-flex xs2>
+        <v-flex xs3>
           <v-layout align-start justify-center column fill-height pa-3>
-            <h4>Жанры:</h4>
-            <h3>{{game.genres}}</h3>
-            <h4>Языки:</h4>
-            <h3>{{game.supported_languages}}</h3>
-            <h4>Разработчик:</h4>
-            <h3>{{game.developers}}</h3>
-            <h4>Дата выхода:</h4>
-            <h3>{{game.release_date}}</h3>
+            <h5>Жанры:</h5>
+            <p>{{game.genres}}</p>
+            <h5>Языки:</h5>
+            <p>{{game.supported_languages}} English, Russian</p>
+            <h5>Разработчик:</h5>
+            <p>{{game.developers}}</p>
+            <h5>Дата выхода:</h5>
+            <p>{{game.release_date}} 01.01.1970</p>
           </v-layout>
         </v-flex>
         <v-flex xs2>
-          <v-layout align-start justify-center column fill-height pa-3>
+          <v-layout align-center justify-center column fill-height pa-3>
             <steam-price :game="game"></steam-price>
           </v-layout>
         </v-flex>
-        <v-flex xs2>
+        <v-flex xs3>
           <metacriticsScore :game="game"></metacriticsScore>
         </v-flex>
+        <v-spacer></v-spacer>
       </v-layout>
       <v-layout xs12 pa-3>
-        <h4>{{game.short_description}}</h4>
+        
+        <h5>{{game.short_description}}</h5>
       </v-layout>
       <v-divider></v-divider>
       <!-- Screen gallery -->
-      <h5>Screenshots:</h5>
+      <h5>Скриншоты:</h5>
       <v-layout align-start justify-space-between row>
         <v-flex xs12>
           <gallery :images="images" :index="index" @close="index = null"></gallery>
