@@ -51,7 +51,7 @@
             v-for="(image, imageIndex) in screenshots"
             :key="imageIndex"
             @click="index = imageIndex"
-            :style="{ backgroundImage: 'url(' + image + ')', width: '200px', height: '100px' }"
+            :style="{ backgroundImage: 'url(' + image + ')', width: '150px', height: '100px' }"
             aspect-ratio="0.5"
           ></v-flex>
         </v-flex>
