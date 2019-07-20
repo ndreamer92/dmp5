@@ -74,7 +74,7 @@
                     justify-space-around
                     column
                     fill-height
-                    v-if="$vuetify.breakpoint.mdAndDown"
+                    v-if="$vuetify.breakpoint.mdAndDown & !$vuetify.breakpoint.xs"
                   >
                     <v-flex lg4 pa-4>
                       <game-top-list :games="topGames" :headerText="'Популярное'"></game-top-list>
@@ -86,6 +86,23 @@
                       <game-top-list :games="topGames" :headerText="'Новые скидки'"></game-top-list>
                     </v-flex>
                   </v-layout>
+                  <v-layout
+                    align-space-around
+                    justify-space-around
+                    column
+                    fill-height
+                    v-if="$vuetify.breakpoint.xs"
+                  >
+                    <v-flex xs12 pa-2>
+                      <game-top-list-mini description="topGames" :headerText="'Популярное'"></game-top-list-mini>
+                    </v-flex>
+                    <v-flex xs12 pa-2>
+                      <game-top-list-mini description="recentAdded" :headerText="'Недавно добавлено'"></game-top-list-mini>
+                    </v-flex>
+                    <v-flex xs12 pa-2>
+                      <game-top-list-mini description="topGames" :headerText="'Новые скидки'"></game-top-list-mini>
+                    </v-flex>
+                  </v-layout>
                 </div>
                 <div v-if="!topGames">
                   <v-progress-circular :size="70" :width="7" color="orange" indeterminate></v-progress-circular>
@@ -93,19 +110,11 @@
               </v-layout>
             </v-container>
           </v-card-title>
-          <v-card-actions>
-            <!-- <v-btn flat color="orange">Share</v-btn>
-            <v-btn flat color="orange">Explore</v-btn>-->
-          </v-card-actions>
+          <v-card-actions></v-card-actions>
         </v-card>
       </v-flex>
     </v-layout>
 
-    <!-- <v-layout align-space-between justify-center column fill-height>
-      <v-flex lg6 offset-lg-3 pa-3>
-        <news-block></news-block>
-      </v-flex>
-    </v-layout>-->
     <v-spacer></v-spacer>
   </v-container>
 </template>
@@ -115,7 +124,7 @@
 <script>
 // import NewsBlock from "../components/NewsBlock";
 import GameTopList from "../components/GameTopList";
-
+import GameTopListMini from "../components/GameTopListMini";
 export default {
   data() {
     return {
@@ -146,7 +155,8 @@ export default {
 
   components: {
     // NewsBlock,
-    GameTopList
+    GameTopList,
+    GameTopListMini
   }
 };
 </script>
